@@ -1,11 +1,12 @@
 //const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const mode = process.env.NODE_ENV === 'production' ? 'production' : "development";
 
 module.exports = {
     mode: mode,
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [new MiniCssExtractPlugin(), new BundleAnalyzerPlugin()],
     //entry: './src/index.js', //not required
     //output: {
     //    filename: "bundle.js", //not required
